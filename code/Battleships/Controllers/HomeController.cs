@@ -15,15 +15,19 @@ namespace Battleships.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "This is my Battleships description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "My contact info.";
 
+            return View();
+        }
+        public ActionResult Stats()
+        {
             return View();
         }
     }
