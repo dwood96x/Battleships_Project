@@ -35,7 +35,7 @@ namespace Battleships.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("This is my Battleships description page.", result.ViewBag.Message);
         }
 
         [TestMethod]
