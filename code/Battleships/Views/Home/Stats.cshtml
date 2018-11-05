@@ -1,9 +1,44 @@
-﻿
+﻿@model Battleships.Models.StatsModel
+
 @{
     ViewBag.Title = "Stats";
 }
 
 <h2>Stats</h2>
 
-<div>This is the placeholder stats page</div>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalGames)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.TotalGames)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GamesWon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GamesWon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GamesLost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GamesLost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WinLossRatio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WinLossRatio)
+        </dd>
+
+    </dl>
+</div>

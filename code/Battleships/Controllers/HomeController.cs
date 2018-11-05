@@ -13,19 +13,22 @@ namespace Battleships.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "This is my Battleships description page.";
-
+            return View();
+        }
+        public ActionResult Register()
+        {
             return View();
         }
 
+        // Disabled in _Layout for now
         public ActionResult Contact()
         {
             ViewBag.Message = "My contact info.";
-
             return View();
         }
+
         public ActionResult Stats()
         {
             return View();

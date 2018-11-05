@@ -215,9 +215,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Battleships\Battleships.csproj">
+    <ProjectReference Include="..\Battleships\Battleships.WebUI.csproj">
       <Project>{7A20F5C4-7566-44F8-934D-1158FA8DD605}</Project>
-      <Name>Battleships</Name>
+      <Name>Battleships.WebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
