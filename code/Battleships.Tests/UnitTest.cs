@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Battleships;
+using Battleships.Controllers;
+using Battleships.
+using System.Reflection;
 
 namespace Battleships.Tests
 {
@@ -52,10 +55,13 @@ namespace Battleships.Tests
         public void TestGameLoad()
         {
             // Arrange
-
+            HomeController controller = new HomeController();
             // Act
+            ViewResult result = controller.Index() as ViewResult;
 
             // Assert
+            Assert.IsNotNull(result);
+
         }
     }
 }
