@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IStatsRepository.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Entities\Login.cs" />
     <Compile Include="Entities\Register.cs" />
     <Compile Include="Entities\Stats.cs" />
