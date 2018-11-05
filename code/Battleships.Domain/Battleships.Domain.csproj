@@ -42,14 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IStatsRepository.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Entities\LoginModel.cs" />
-    <Compile Include="Entities\RegisterModel.cs" />
-    <Compile Include="Entities\StatsModel.cs" />
+    <Compile Include="Entities\Login.cs" />
+    <Compile Include="Entities\Register.cs" />
+    <Compile Include="Entities\Stats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

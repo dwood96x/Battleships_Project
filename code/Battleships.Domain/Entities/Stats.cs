@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Battleships.Domain.Entities
 {
-    public class StatsModel
+    public class Stats
     {
         [Display(Name = "Total games played: ")]
         public int TotalGames { get; }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Battleships.Domain.Entities
 {
-    public class LoginModel
+    public class Login
     {
         [Display(Name = "Username: ")]
         [Required(ErrorMessage = "Username is required")]
