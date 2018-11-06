@@ -7,7 +7,6 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Battleships;
 using Battleships.Controllers;
-using Battleships.
 using System.Reflection;
 
 namespace Battleships.Tests
