@@ -10,6 +10,13 @@ namespace Battleships.Domain.Concrete
 {
     public class EFDbContext : System.Data.Entity.DbContext
     {
+        public EFDbContext()
+            : base("name=EFDbContext")
+        {
+        }
+        public DbSet<Login> Login { get; set; }
         public DbSet<Stats> Stats { get; set; }
+        public DbSet<Register> Register { get; set; }
+
     }
 }
