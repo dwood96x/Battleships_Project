@@ -8,6 +8,8 @@ namespace Battleships.Domain.Entities
 {
     public class UserStats
     {
+        [Key]
+        public int userID { get; set; }
         [Display(Name = "Total games played: ")]
         public int TotalGames { get; }
         [Display(Name = "Games won: ")]

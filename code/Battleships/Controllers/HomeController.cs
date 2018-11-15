@@ -11,8 +11,6 @@ namespace Battleships.Controllers
 {
     public class HomeController : Controller
     {
-        private EFDbContext context = new EFDbContext();
-
         public ActionResult Index()
         {
             return View();
@@ -40,13 +38,16 @@ namespace Battleships.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "userName,username,password,email")] Users register)
+        public ActionResult Register([Bind(Include = "username,password,email")] Users register)
         {
             if (ModelState.IsValid)
             {
-                context.Users.Add(register);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                using (EFDbContext context = new EFDbContext())
+                {
+                    context.Users.Add(register);
+                    context.SaveChanges();
+                    return View("Index");
+                }
             }
             return View(register);
         }

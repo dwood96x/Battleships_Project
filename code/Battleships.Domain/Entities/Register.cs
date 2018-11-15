@@ -10,14 +10,14 @@ namespace Battleships.Domain.Entities
     {
         [Display(Name = "Username: ")]
         [Required(ErrorMessage = "Username is required")]
-        public string Username { get; set; }
+        public string username { get; set; }
         [Display(Name = "Password: ")]
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string password { get; set; }
         [Display(Name = "Email: ")]
         [Required(ErrorMessage = "Email is required")]
-        public string Email { get; set; }
+        public string email { get; set; }
 
     }
 }
