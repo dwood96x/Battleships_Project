@@ -49,11 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IStatsRepository.cs" />
+    <Compile Include="Abstract\IUsersRepository.cs" />
+    <Compile Include="Concrete\Users.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFStatsRepository.cs" />
+    <Compile Include="Concrete\EFUsersRepository.cs" />
     <Compile Include="Entities\Login.cs" />
     <Compile Include="Entities\Register.cs" />
-    <Compile Include="Entities\Stats.cs" />
+    <Compile Include="Entities\UserStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

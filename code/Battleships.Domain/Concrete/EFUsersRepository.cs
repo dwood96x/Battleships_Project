@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Battleships.Domain.Abstract;
-using Battleships.Domain.Entities;
 
 namespace Battleships.Domain.Concrete
 {
-    public class EFStatsRepository : IStatsRepository
+    public class EFUsersRepository
     {
         private EFDbContext context = new EFDbContext();
 
-        public IEnumerable<UserStats> UserStats
+        public IEnumerable<Users> Users
         {
-            get { return context.UserStats; }
+            get { return context.Users; }
         }
     }
 }
