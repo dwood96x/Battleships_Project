@@ -22,13 +22,30 @@ namespace Battleships.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(Login login)
+        public ActionResult Login(Users login)
         {
-            using (var context = new EFDbContext())
+            using (EFDbContext context = new EFDbContext())
             {
-
+                try
+                {
+                    var user = context.Users.Single(u => u.username == login.username && u.password == login.password);
+                    if (user != null)
+                    {
+                        Session["UserID"] = user.userID.ToString();
+                        Session["Username"] = user.username.ToString();
+                        ViewBag.Result = "You have successfully logged in " + login.username;
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Username or password is wrong.");
+                    }
+                }
+                catch (System.InvalidOperationException)
+                {
+                    ViewBag.Result = "Incorrect username or password, please try again.";
+                }
             }
-            return View(login);
+            return View();
         }
 
         [HttpGet]
@@ -38,7 +55,7 @@ namespace Battleships.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "username,password,email")] Users register)
+        public ActionResult Register(Users register)
         {
             if (ModelState.IsValid)
             {
@@ -46,12 +63,13 @@ namespace Battleships.Controllers
                 {
                     context.Users.Add(register);
                     context.SaveChanges();
-                    return View("Index");
+                    ViewBag.SuccessfulMessage = "You have successfully registered " + register.username;
+                    System.Threading.Thread.Sleep(3500);
+                    //return View("Index");
                 }
             }
-            return View(register);
+            return View();
         }
-
         // Disabled in _Layout for now
         public ActionResult Contact()
         {
