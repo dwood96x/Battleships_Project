@@ -53,6 +53,7 @@ namespace Battleships.Controllers
         {
             return View();
         }
+        // The registration method takes in a User and adds it to the database, assuming there is no conflicts between it and the database.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(Users register)
@@ -61,11 +62,20 @@ namespace Battleships.Controllers
             {
                 using (EFDbContext context = new EFDbContext())
                 {
+                    if (context.Users.Where(u => u.username == register.username).Count() != 0)
+                    {
+                        ViewBag.UserExist = "That username is taken";
+                        return View();
+                    }
+                    if (context.Users.Where(u => u.email == register.email).Count() != 0)
+                    {
+                        ViewBag.EmailExist = "That email is taken";
+                        return View();
+                    }
                     context.Users.Add(register);
                     context.SaveChanges();
                     ViewBag.SuccessfulMessage = "You have successfully registered " + register.username;
-                    System.Threading.Thread.Sleep(3500);
-                    //return View("Index");
+                    //System.Threading.Thread.Sleep(3500);
                 }
             }
             return View();
