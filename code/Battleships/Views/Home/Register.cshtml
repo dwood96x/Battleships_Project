@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Register";
+    var error = ViewData["duperror"];
 }
 
 @if (ViewBag.SuccessfulMessage == null)
@@ -10,17 +11,17 @@
     {
         @Html.AntiForgeryToken()
         <h4>Enter in your account information here.</h4>
-        if (ViewBag.UserExist != null)
+        if (error != null)
         {
             <div class="alert alert-danger" role="alert">
                 @ViewBag.UserExist
             </div>
-        }
-        if (ViewBag.EmailExist != null)
-        {
-            <div class="alert alert-danger" role="alert">
-                @ViewBag.EmailExist
-            </div>
+                if (ViewBag.EmailExist != null)
+                {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.EmailExist
+                </div>            
+                }
         }
         <div class="form-horizontal">
             <hr />

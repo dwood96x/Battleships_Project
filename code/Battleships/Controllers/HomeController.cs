@@ -62,14 +62,20 @@ namespace Battleships.Controllers
             {
                 using (EFDbContext context = new EFDbContext())
                 {
+                    bool duperror = false;
                     if (context.Users.Where(u => u.username == register.username).Count() != 0)
                     {
                         ViewBag.UserExist = "That username is taken";
-                        return View();
+                        duperror = true;
                     }
                     if (context.Users.Where(u => u.email == register.email).Count() != 0)
                     {
                         ViewBag.EmailExist = "That email is taken";
+                        duperror = true;
+                    }
+                    if (duperror == true)
+                    {
+                        ViewData["duperror"] = duperror;
                         return View();
                     }
                     context.Users.Add(register);
