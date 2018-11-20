@@ -4,9 +4,12 @@
 
 <div class=" warning">
     <h2>The unfinished game goes below this.</h2>
+    @if (Session["Username"] != null)
+    {
     <p class="body-content">
-        I wish this game was completed already.
+        Hello @Session["Username"].ToString()
     </p>
+    }
 </div>
 
 <!DOCTYPE html>
