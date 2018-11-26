@@ -86,6 +86,11 @@ namespace Battleships.Controllers
             }
             return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return View();
+        }
         // Disabled in _Layout for now
         public ActionResult Contact()
         {
