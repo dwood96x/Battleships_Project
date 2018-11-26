@@ -22,11 +22,16 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Login", "Login", "Home")</li>
-                    <li>@Html.ActionLink("Register","Register","Home")</li>
+                    <li>@Html.ActionLink("Register", "Register", "Home")</li>
                     @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-                    <li>@Html.ActionLink("Stats","Stats", "Home")</li>
+                    <li>@Html.ActionLink("Stats", "Stats", "Home")</li>
                 </ul>
+                @if (Session["Username"] != null)
+                {
+                    <span class="badge pull-right">Username: @Session["Username"].ToString()</span>
+                }
             </div>
+
         </div>
     </div>
     <div class="container body-content">
