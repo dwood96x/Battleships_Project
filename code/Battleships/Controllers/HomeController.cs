@@ -33,7 +33,7 @@ namespace Battleships.Controllers
                     {
                         Session["UserID"] = user.userID.ToString();
                         Session["Username"] = user.username.ToString();
-                        ViewBag.Result = "You have successfully logged in " + login.username;
+                        ViewBag.GoodResult = "You have successfully logged in " + login.username;
                     }
                     else
                     {
@@ -42,7 +42,7 @@ namespace Battleships.Controllers
                 }
                 catch (System.InvalidOperationException)
                 {
-                    ViewBag.Result = "Incorrect username or password, please try again.";
+                    ViewBag.BadResult = "Incorrect username or password, please try again.";
                 }
             }
             return View();
