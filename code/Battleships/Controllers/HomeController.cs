@@ -35,10 +35,6 @@ namespace Battleships.Controllers
                         Session["Username"] = user.username.ToString();
                         ViewBag.GoodResult = "You have successfully logged in " + login.username;
                     }
-                    else
-                    {
-                        ModelState.AddModelError("", "Username or password is wrong.");
-                    }
                 }
                 catch (System.InvalidOperationException)
                 {
