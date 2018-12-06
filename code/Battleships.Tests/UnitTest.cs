@@ -8,17 +8,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Battleships;
 using Battleships.Controllers;
 using System.Reflection;
+using Moq;
+using Battleships.Domain.Abstract;
 
 namespace Battleships.Tests
 {
     [TestClass]
     public class UnitTest
     {
+        // TODO : Learn how to use Moq
         [TestMethod]
         public void TestRegisterAccount()
         {
             // Arrange
-
+            var MockUsersRepo = new Mock<IUsersRepository>();
             // Act
 
             // Assert
@@ -27,7 +30,7 @@ namespace Battleships.Tests
         public void TestLoginAccount()
         {
             // Arrange
-
+            var MockUsersRepo = new Mock<IUsersRepository>();
             // Act
 
             // Assert
@@ -36,7 +39,7 @@ namespace Battleships.Tests
         public void TestLogoutAccount()
         {
             // Arrange
-
+            var MockUsersRepo = new Mock<IUsersRepository>();
             // Act
 
             // Assert

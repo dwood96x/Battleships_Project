@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleships.WebUI", "Battleships\Battleships.WebUI.csproj", "{7A20F5C4-7566-44F8-934D-1158FA8DD605}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleships.Tests", "Battleships.Tests\Battleships.Tests.csproj", "{B60907C1-CF84-4649-9635-F66E775E085A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{23760661-8B47-4FC2-BD21-33C693CD3305} = {23760661-8B47-4FC2-BD21-33C693CD3305}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battleships.Domain", "Battleships.Domain\Battleships.Domain.csproj", "{23760661-8B47-4FC2-BD21-33C693CD3305}"
 EndProject

@@ -209,6 +209,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Battleships.Domain\Battleships.Domain.csproj">
+      <Project>{23760661-8B47-4FC2-BD21-33C693CD3305}</Project>
+      <Name>Battleships.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Battleships\Battleships.WebUI.csproj">
       <Project>{7A20F5C4-7566-44F8-934D-1158FA8DD605}</Project>
       <Name>Battleships.WebUI</Name>

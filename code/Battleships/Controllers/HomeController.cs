@@ -77,7 +77,6 @@ namespace Battleships.Controllers
                     context.Users.Add(register);
                     context.SaveChanges();
                     ViewBag.SuccessfulMessage = "You have successfully registered " + register.username;
-                    //System.Threading.Thread.Sleep(3500);
                 }
             }
             return View();
@@ -85,12 +84,6 @@ namespace Battleships.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return View();
-        }
-        // Disabled in _Layout for now
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "My contact info.";
             return View();
         }
 
