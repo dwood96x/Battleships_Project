@@ -2,9 +2,18 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class=" warning">
-    <h2>The unfinished game goes below this.</h2>
-</div>
+@if (Session["Username"] != null)
+{
+    <div class=" warning">
+        <h2>Hello @Session["Username"].ToString()</h2>
+    </div>
+}
+else
+{
+    <div class=" warning">
+        <h2>Hello Guest!</h2>
+    </div>
+}
 
 <!DOCTYPE html>
 <html lang="en-us">
@@ -14,7 +23,7 @@
     <title>Unity WebGL Player | Battleships</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Battleships.json");
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Battleships.json");
     </script>
 </head>
 <body>
