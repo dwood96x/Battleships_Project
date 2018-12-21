@@ -26,6 +26,7 @@ namespace Battleships.Domain.Concrete
 
         [Display(Name = "Email: ")]
         [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]
         public string email { get; set; }
 
     }
