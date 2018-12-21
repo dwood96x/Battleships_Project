@@ -10,13 +10,14 @@ using Battleships.Controllers;
 using System.Reflection;
 using Moq;
 using Battleships.Domain.Abstract;
+using Battleships.Domain.Concrete;
 
 namespace Battleships.Tests
 {
     [TestClass]
     public class UnitTest
     {
-        // TODO : Learn how to use Moq
+
         [TestMethod]
         public void TestRegisterAccount()
         {
@@ -31,9 +32,11 @@ namespace Battleships.Tests
         {
             // Arrange
             var MockUsersRepo = new Mock<IUsersRepository>();
+            MockUsersRepo.Setup(m => m.Users).Returns(new Users[] { new Users { userID = 1, username = "david", password = "123", email = "test@mail.com" } });
             // Act
-
+            HomeController home = new HomeController();
             // Assert
+            home.Login();
         }
         [TestMethod]
         public void TestLogoutAccount()
